@@ -276,6 +276,9 @@ public class OTWinRMNodeExecutor implements NodeExecutor, Describable {
         if (null == optionName) {
             return null;
         }
+        if (null != context.getDataContext() && null != context.getDataContext().get("secureOption")) {
+            return context.getDataContext().get("secureOption").get(optionName);
+        }
         if (null == context.getPrivateDataContext()) {
             return null;
         }
