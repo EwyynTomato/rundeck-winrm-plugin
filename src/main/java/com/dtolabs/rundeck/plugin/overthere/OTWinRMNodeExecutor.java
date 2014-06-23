@@ -26,6 +26,7 @@ import com.xebialabs.overthere.cifs.WinrmHttpsHostnameVerificationStrategy;
 import com.xebialabs.overthere.cifs.winrm.WinRmRuntimeIOException;
 import com.xebialabs.overthere.util.ConsoleOverthereExecutionOutputHandler;
 import com.xebialabs.overthere.util.DefaultAddressPortMapper;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.*;
 
@@ -276,7 +277,9 @@ public class OTWinRMNodeExecutor implements NodeExecutor, Describable {
         if (null == optionName) {
             return null;
         }
-        if (null != context.getDataContext() && null != context.getDataContext().get("secureOption")) {
+        if (null != context.getDataContext()
+                && null != context.getDataContext().get("secureOption")
+                && StringUtils.isNotEmpty(context.getDataContext().get("secureOption").get(optionName))) {
             return context.getDataContext().get("secureOption").get(optionName);
         }
         if (null == context.getPrivateDataContext()) {

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.rundeck-plugins</groupId>
   <artifactId>rundeck-winrm-plugin</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2-tomato-fix</version>
   <name>RunDeck WinRM NodeExecutor Plugin</name>
   <parent>
     <artifactId>rundeck-plugins-parent</artifactId>
